@@ -8,8 +8,8 @@ export type Navigation = {
 };
 
 export const siteConfig = {
-  title: "VisActor Next Template",
-  description: "Template for VisActor and Next.js",
+  title: "WAFAMS Software",
+  description: "Water Factory Management System (WAFAMS)",
 };
 
 export const navigations: Navigation[] = [

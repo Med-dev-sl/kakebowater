@@ -4,6 +4,11 @@ import type { DateRange } from "react-day-picker";
 import { averageTicketsCreated } from "@/data/average-tickets-created";
 import type { TicketMetric } from "@/types/types";
 
+export const authAtom = atom<{ isAuthenticated: boolean; user: any | null }>({
+  isAuthenticated: false,
+  user: null,
+});
+
 const defaultStartDate = new Date(2023, 11, 18);
 
 export const dateRangeAtom = atom<DateRange | undefined>({
