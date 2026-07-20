@@ -1,20 +1,20 @@
 "use client";
 
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Provider as JotaiProvider } from "jotai";
 import { ChartThemeProvider } from "@/components/providers/chart-theme-provider";
-import { ModeThemeProvider } from "@/components/providers/mode-theme-provider";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <JotaiProvider>
-      <ModeThemeProvider
+      <NextThemesProvider
         attribute="class"
         defaultTheme="system"
         enableSystem
         disableTransitionOnChange
       >
         <ChartThemeProvider>{children}</ChartThemeProvider>
-      </ModeThemeProvider>
+      </NextThemesProvider>
     </JotaiProvider>
   );
 }

@@ -1,4 +1,4 @@
-export const customerSatisfication = {
+export const customerSatisfaction = {
   positive: 0.8,
   neutral: 0.15,
   negative: 0.05,

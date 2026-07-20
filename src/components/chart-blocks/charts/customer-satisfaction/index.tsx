@@ -1,40 +1,40 @@
 import { SmilePlus, ThumbsDown, ThumbsUp } from "lucide-react";
 import {
-  customerSatisfication,
+  customerSatisfaction,
   totalCustomers,
-} from "@/data/customer-satisfication";
+} from "@/data/customer-satisfaction";
 import ChartTitle from "../../components/chart-title";
 import LinearProgress from "./components/linear-progress";
 
-const customerSatisficationOptions = [
+const customerSatisfactionOptions = [
   {
     label: "Positive",
     color: "#5fb67a",
-    percentage: customerSatisfication.positive,
+    percentage: customerSatisfaction.positive,
     icon: <ThumbsUp className="h-6 w-6" stroke="#5fb67a" fill="#5fb67a" />,
   },
   {
     label: "Neutral",
     color: "#f5c36e",
-    percentage: customerSatisfication.neutral,
+    percentage: customerSatisfaction.neutral,
     icon: <ThumbsUp className="h-6 w-6" stroke="#f5c36e" fill="#f5c36e" />,
   },
   {
     label: "Negative",
     color: "#da6d67",
-    percentage: customerSatisfication.negative,
+    percentage: customerSatisfaction.negative,
     icon: <ThumbsDown className="h-6 w-6" stroke="#da6d67" fill="#da6d67" />,
   },
 ];
 
-export default function CustomerSatisfication() {
+export default function CustomerSatisfaction() {
   return (
     <section className="flex h-full flex-col gap-2">
-      <ChartTitle title="Customer Satisfication" icon={SmilePlus} />
+      <ChartTitle title="Customer Satisfaction" icon={SmilePlus} />
       <div className="my-4 flex h-full items-center justify-between">
         <div className="mx-auto grid w-full grid-cols-2 gap-6">
           <TotalCustomers />
-          {customerSatisficationOptions.map((option) => (
+          {customerSatisfactionOptions.map((option) => (
             <LinearProgress
               key={option.label}
               label={option.label}

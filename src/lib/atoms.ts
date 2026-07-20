@@ -2,9 +2,9 @@ import { addDays, endOfDay, isWithinInterval, startOfDay } from "date-fns";
 import { atom } from "jotai";
 import type { DateRange } from "react-day-picker";
 import { averageTicketsCreated } from "@/data/average-tickets-created";
-import type { TicketMetric } from "@/types/types";
+import type { TicketMetric, User } from "@/types/types";
 
-export const authAtom = atom<{ isAuthenticated: boolean; user: any | null }>({
+export const authAtom = atom<{ isAuthenticated: boolean; user: User | null }>({
   isAuthenticated: false,
   user: null,
 });

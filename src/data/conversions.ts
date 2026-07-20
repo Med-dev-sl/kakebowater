@@ -1,4 +1,4 @@
-export const convertions = [
+export const conversions = [
   {
     name: "Bandung",
     value: 3260,

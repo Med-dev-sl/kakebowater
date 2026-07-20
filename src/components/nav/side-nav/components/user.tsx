@@ -1,5 +1,4 @@
 import { ChevronDown, LogOut } from "lucide-react";
-import Image from "next/image";
 import { useAtom } from "jotai";
 import { authAtom } from "@/lib/atoms";
 import { useRouter } from "next/navigation";

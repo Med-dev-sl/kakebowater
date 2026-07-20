@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { VisActorLogo } from "@/components/icons";
+import "@/style/dot-matrix.css";
 
 export default function VisActor() {
   return (

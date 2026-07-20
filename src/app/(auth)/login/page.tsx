@@ -11,15 +11,17 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Lock, Mail, Loader2 } from "lucide-react";
 
 export default function LoginPage() {
-  const [auth, setAuth] = useAtom(authAtom);
+  const [, setAuth] = useAtom(authAtom);
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
     // Mock login delay
     await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -29,7 +31,7 @@ export default function LoginPage() {
       setAuth({ isAuthenticated: true, user: { email, name: "Admin User" } });
       router.push("/");
     } else {
-      alert("Please enter email and password");
+      setError("Please enter email and password");
     }
     setLoading(false);
   };
@@ -97,6 +99,11 @@ export default function LoginPage() {
                 </div>
               </div>
             </CardContent>
+            {error && (
+              <div className="px-6 pb-2">
+                <p className="text-sm text-red-400">{error}</p>
+              </div>
+            )}
             <CardFooter>
               <Button 
                 type="submit" 
